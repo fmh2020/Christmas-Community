@@ -13,17 +13,6 @@ export default function ({ db, ensurePfp }) {
     res.render('profile', { title: _CC.lang('PROFILE_TITLE', req.user._id) })
   })
 
-  const INFO_KEYS = [
-    'shoeSize',
-    'ringSize',
-    'dressSize',
-    'sweaterSize',
-    'shirtSize',
-    'pantsSize',
-    'coatSize',
-    'hatSize',
-    'phoneModel',
-  ]
   router.post('/info', verifyAuth(), async (req, res) => {
     if (!req.user.info) {
       req.user.info = {}
